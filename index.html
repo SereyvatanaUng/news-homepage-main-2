@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Frontend Mentor | News homepage</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="navbar">
+            <div class="logo">W.</div>
+            <ul class="links">
+                <li><a href="hero">Home</a></li>
+                <li><a href="about">New</a></li>
+                <li><a href="services">Popular</a></li>
+                <li><a href="contact">Trading</a></li>
+                <li><a href="categories">Categories</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="hero">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="categories">Categories</a></li>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        
+
+        <div class="grid-layout">
+            <div class="banner">
+                <img src="assets/images/image-web-3-mobile.jpg" alt="">
+                <!-- <source media="(min-width: 768px)" srcset="assets/images/image-web-3-desktop.jpg">
+                <source media="(max-width: 768px)" srcset="assets/images/image-web-3-mobile.jpg">
+                <img src="img_girl.jpg" style="width:auto;"> -->
+            </div>
+
+            <div class="context">
+                <h1 class="headline">The Bright Future of Web 3.0?</h1>
+                <div class="desc">
+                    <p class="paragraph">
+                        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
+                    </p>
+                    <div class="btn">
+                        Read more
+                    </div>
+                </div>
+            </div>
+
+            <div class="aside">
+                <div class="legend">
+                    new
+                </div>
+                <div class="aside-article">
+                    <h2>Hydrogen VS Electric Cars</h2>
+                    <p class="paragraph">Will hydrogen-fueled cars ever catch up to EVs?</p>
+                </div>
+                <div class="aside-article">
+                    <h2>Hydrogen VS Electric Cars</h2>
+                    <p class="paragraph">Will hydrogen-fueled cars ever catch up to EVs?</p>
+                </div>
+                <div class="aside-article">
+                    <h2>Hydrogen VS Electric Cars</h2>
+                    <p class="paragraph">Will hydrogen-fueled cars ever catch up to EVs?</p>
+                </div>
+                
+            </div>
+
+            <div class="bottom">
+                <div class="bot-article">
+                    <figure class="bot-article-img">
+                        <img src="assets/images/image-retro-pcs.jpg" alt="">
+                    </figure>
+                    <div class="bot-article-desc">
+                        <p class="accent">01</p>
+                        <h3>Reviving Retro PCs</h3>
+                        <p class="paragraph">
+                            What happens when old PCs are given modern upgrades?
+                        </p>
+                    </div>
+                </div>
+                <div class="bot-article">
+                    <figure class="bot-article-img">
+                        <img src="assets/images/image-retro-pcs.jpg" alt="">
+                    </figure>
+                    <div class="bot-article-desc">
+                        <p class="accent">01</p>
+                        <h3>Reviving Retro PCs</h3>
+                        <p class="paragraph">
+                            What happens when old PCs are given modern upgrades?
+                        </p>
+                    </div>
+                </div>
+                <div class="bot-article">
+                    <figure class="bot-article-img">
+                        <img src="assets/images/image-retro-pcs.jpg" alt="">
+                    </figure>
+                    <div class="bot-article-desc">
+                        <p class="accent">01</p>
+                        <h3>Reviving Retro PCs</h3>
+                        <p class="paragraph">
+                            What happens when old PCs are given modern upgrades?
+                        </p>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+</body>
+</html>
