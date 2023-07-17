@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Koh+Santepheap:wght@400;700&display=swap');
 
 :root {
-    /* --font-size: 15px; */
     /* Primary */
     --Soft-orange: hsl(35, 77%, 62%);
     --Soft-red: hsl(5, 85%, 63%);
@@ -34,6 +33,7 @@ a {
 }
 
 .logo {
+    font-weight: 800;
     font-size: 3rem;
 }
 
@@ -79,15 +79,36 @@ header {
 
 .dropdown_menu.open {
     background-color: var(--Off-white);
-    height: 100vh;
+    height: 200vh;
+    background-color: pink;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.overlay-hidden {
+    display: none;
 }
 
 /* ========== grid layout ========== */
 
+.container {
+    position: relative; 
+    z-index: -2;
+}
+
 .grid-layout {
     padding: 2em 2em;
     display: grid;
-    grid-template-rows: 300px 450px 700px 700px;
+    grid-template-rows: 320px 450px 700px 550px;
 }
 
 .context {
@@ -155,6 +176,92 @@ header {
 }
 
 .bot-article {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    margin-bottom: 2em;
 }
 
+.bot-article-desc .accent{
+    color: var(--Grayish-blue);
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0.4em;
+}
+
+.bot-article-desc .paragraph {
+    margin-top: .5em;
+}
+
+/* ========== Media Query ========== */
+
+@media screen and (min-width: 1024px) {
+
+    .toggle_btn {
+        display: none;
+    }
+
+    .links {
+        display: unset;
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+    }
+
+    .links li a {
+        color: var(--Dark-grayish-blue);
+    }
+
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: none;
+        grid-template-areas: 
+            "banner banner aside"
+            "context context aside"
+            "bottom bottom bottom";
+        gap: 2em;
+    }
+
+    .banner {
+        grid-area: banner;
+    }
+
+    .aside {
+        grid-area: aside;
+        margin-bottom: 0;
+    }
+
+    .context {
+        grid-area: context;
+        gap: 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .context .headline {
+        font-weight: 800;
+        font-size: 4rem;
+        margin-top: 0;
+    }
+
+    .context .desc {
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .context .desc .paragraph {
+        font-size: 1.25rem;
+    }
+
+
+    .bottom {
+        grid-area: bottom;
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2em
+    }
+
+}
